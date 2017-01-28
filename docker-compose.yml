@@ -8,7 +8,7 @@ services:
     depends_on:
       - activemq
     volumes:
-      - ./classAPositionReport.schema:/classAPositionReport.schema
+      - ./classAPositionReportSchema.json:/classAPositionReportSchema.json
     environment:
       - ADV_HOST=fast-data-dev
       - FORWARDLOGS=0

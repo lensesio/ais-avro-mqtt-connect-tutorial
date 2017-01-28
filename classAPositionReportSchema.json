@@ -78,6 +78,11 @@
       "name": "Maneuver",
       "type": "int",
       "doc": "Manuever Indicator (enumerated type)"
+    },
+    {
+      "name": "Timestamp",
+      "type": "long",
+      "doc": "Time the message was encoded to avro (nanoseconds since epoch). May be used for ordering."
     }
   ]
 }
