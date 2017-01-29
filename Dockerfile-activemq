@@ -6,7 +6,8 @@ RUN apk add --no-cache \
         tar \
         gzip \
         ca-certificates \
-        openjdk8-jre-base
+        openjdk8-jre-base \
+    && echo "progress = dot:giga" | tee /etc/wgetrc
 
 ARG ACTIVEMQ_VERSION="5.14.2"
 RUN wget "http://apache.mirrors.ovh.net/ftp.apache.org/dist/activemq/${ACTIVEMQ_VERSION}/apache-activemq-${ACTIVEMQ_VERSION}-bin.tar.gz" \

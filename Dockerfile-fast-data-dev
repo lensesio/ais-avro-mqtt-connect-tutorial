@@ -1,7 +1,7 @@
 FROM landoop/fast-data-dev:latest
 MAINTAINER Marios Andreopoulos <marios@landoop.com>
 
-RUN apk add --no-cache go git
+RUN apk add --no-cache go musl-dev git
 ADD nmea-sample /
 
 ENV GOPATH=/opt/go PATH=$PATH:/opt/go/bin
