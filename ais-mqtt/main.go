@@ -25,13 +25,14 @@ import (
 )
 
 var (
-	mqttServerAddr   = flag.String("server", "localhost:1883", "MQTT server endpoint")
+	mqttServerAddr   = flag.String("server", "activemq:1883", "MQTT server endpoint")
 	originName       = flag.String("origin", "/ais", "origin queue or topic")
 	logFilename      = flag.String("log", "", "file to write output (and logs), stdout if left empty")
 	schemaFilename   = flag.String("schema", "/classAPositionReportSchema.json", "file containing the avro schema to use")
-	nmeaDataFilename = flag.String("nmea", "/nmea-sample", "file containing nmea sentences (size isn't important but better to have a few thousand Class A sentences)")
-	testMessages     = flag.Int("messages", 100000, "number of messages to send to kafka")
-	numWorkers       = flag.Int("workers", 8, "number of workers to encode messages to avro and send them to MQTT")
+	nmeaDataFilename = flag.String("nmea", "/opt/go/src/landoop/ais-mqtt/nmea-sample",
+		"file containing nmea sentences (size isn't important but better to have a few thousand Class A sentences)")
+	testMessages = flag.Int("messages", 100000, "number of messages to send to kafka")
+	numWorkers   = flag.Int("workers", 64, "number of workers to encode messages to avro and send them to MQTT")
 )
 
 var workerWg sync.WaitGroup

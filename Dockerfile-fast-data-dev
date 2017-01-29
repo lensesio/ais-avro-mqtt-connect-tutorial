@@ -2,10 +2,9 @@ FROM landoop/fast-data-dev:latest
 MAINTAINER Marios Andreopoulos <marios@landoop.com>
 
 RUN apk add --no-cache go musl-dev git
-ADD nmea-sample /
 
 ENV GOPATH=/opt/go PATH=$PATH:/opt/go/bin
-ADD main.go /opt/go/src/landoop/ais-mqtt/
+ADD ais-mqtt /opt/go/src/landoop/ais-mqtt
 RUN cd /opt/go/src/landoop/ais-mqtt/ \
     && go get -v \
     && go build -v

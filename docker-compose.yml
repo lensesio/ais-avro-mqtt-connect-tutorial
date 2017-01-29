@@ -21,6 +21,6 @@ services:
       dockerfile: Dockerfile-activemq
       args:
         ACTIVEMQ_VERSION: 5.14.2
-        ACTIVEMQ_ADMIN: "landoop: landoop, admin"
+        ACTIVEMQ_ADMIN: "admin: admin, admin"
         ACTIVEMQ_USER: "test: test, user"
     image: landoop-tutorial/activemq
