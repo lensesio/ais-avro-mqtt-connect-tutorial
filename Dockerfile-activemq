@@ -2,15 +2,11 @@ FROM alpine
 MAINTAINER Marios Andreopoulos <marios@landoop.com>
 
 RUN apk add --no-cache \
-        bash \
         wget \
         tar \
         gzip \
         ca-certificates \
-        openjdk8-jre-base \
-        supervisor \
-    && echo "progress = dot:giga" | tee /etc/wgetrc \
-    && mkdir -p /opt
+        openjdk8-jre-base
 
 ARG ACTIVEMQ_VERSION="5.14.2"
 RUN wget "http://apache.mirrors.ovh.net/ftp.apache.org/dist/activemq/${ACTIVEMQ_VERSION}/apache-activemq-${ACTIVEMQ_VERSION}-bin.tar.gz" \
