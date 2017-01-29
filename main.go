@@ -1,7 +1,10 @@
 /*
-A simple program to format a couple messages in avro and send them to
-a MQTT server. Also tries to read back in order to provide some kind
-of verification that it works.
+A simple program to decode AIS messages, select Class A Position
+reports, encode them to Avro, serialize them to binary and send
+them to MQTT. It has a simple worker pool to speed-up the slowest
+part of the process (waiting for delivery confirmation from MQTT)
+and the number of messages sent is configurable (iterates over
+the same source until it reaches the quota).
 */
 package main
 
